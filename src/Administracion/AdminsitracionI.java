@@ -118,7 +118,7 @@ public class AdminsitracionI {
 		btnAtras.setBounds(10, 420, 64, 23);
 		frame.getContentPane().add(btnAtras);
 		
-		btnListar = new JButton("Listar");
+		btnListar = new JButton("Actualizar");
 		btnListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ConexionBBDD Prueba = new ConexionBBDD();

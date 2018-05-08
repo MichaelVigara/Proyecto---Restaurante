@@ -27,6 +27,7 @@ public class BusquedaAvanzadaAdminII {
 				try {
 					BusquedaAvanzadaAdminII window = new BusquedaAvanzadaAdminII();
 					window.frame.setVisible(true);
+					window.frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -46,7 +47,7 @@ public class BusquedaAvanzadaAdminII {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 435, 183);
+		frame.setBounds(100, 100, 435, 175);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -109,12 +110,12 @@ public class BusquedaAvanzadaAdminII {
 		
 		JButton btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Tahoma", Font.PLAIN, 9));
-		btnAtras.setBounds(343, 116, 66, 23);
+		btnAtras.setBounds(353, 111, 66, 23);
 		frame.getContentPane().add(btnAtras);
 		
 		JButton btnBuscar = new JButton("Buscar");
 		btnBuscar.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btnBuscar.setBounds(301, 31, 108, 52);
+		btnBuscar.setBounds(311, 31, 108, 52);
 		frame.getContentPane().add(btnBuscar);
 	}
 }
