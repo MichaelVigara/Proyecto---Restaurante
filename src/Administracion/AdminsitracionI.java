@@ -65,7 +65,7 @@ public class AdminsitracionI {
 		frame.getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 561, 317);
+		scrollPane.setBounds(10, 11, 561, 364);
 		frame.getContentPane().add(scrollPane);
 		
 		AdministracionProdPreCatg = new JTable();

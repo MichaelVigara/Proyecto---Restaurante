@@ -1,4 +1,4 @@
-package Restaurante;
+package Administracion;
 
 import java.awt.EventQueue;
 
