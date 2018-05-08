@@ -21,6 +21,7 @@ public class FondoI extends JFrame {
 				try {
 					FondoI frame = new FondoI();
 					frame.setVisible(true);
+					frame.setResizable(false);
 					frame.setSize(755,540);
 					PanelI p = new PanelI("/Inicio/fondo.jpg");
 					frame.getContentPane().add(p);

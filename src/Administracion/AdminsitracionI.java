@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 public class AdminsitracionI {
 
 	private JFrame frame;
-	private JTable DefaultTableModel;
+	private JTable AdministracionProdPreCatg;
 	private JLabel lblBuscar;
 	private JTextField textField;
 	private JButton btnBusqudaAvanzada;
@@ -40,6 +40,7 @@ public class AdminsitracionI {
 				try {
 					AdminsitracionI window = new AdminsitracionI();
 					window.frame.setVisible(true);
+					window.frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -59,7 +60,7 @@ public class AdminsitracionI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 791, 493);
+		frame.setBounds(100, 100, 780, 493);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -67,15 +68,15 @@ public class AdminsitracionI {
 		scrollPane.setBounds(10, 11, 561, 317);
 		frame.getContentPane().add(scrollPane);
 		
-		DefaultTableModel = new JTable();
-		DefaultTableModel.setModel(new DefaultTableModel(
+		AdministracionProdPreCatg = new JTable();
+		AdministracionProdPreCatg.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
 				"Nombre del Producto", "Precio", "Categoria"
 			}
 		));
-		scrollPane.setViewportView(DefaultTableModel);
+		scrollPane.setViewportView(AdministracionProdPreCatg);
 		
 		lblBuscar = new JLabel("Buscar");
 		lblBuscar.setBounds(581, 18, 46, 14);
@@ -121,12 +122,14 @@ public class AdminsitracionI {
 		btnListar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				ConexionBBDD Prueba = new ConexionBBDD();
-				DefaultTableModel.setModel(Prueba.Productos());
+				AdministracionProdPreCatg.setModel(Prueba.Productos());
 			}
 		});
 		btnListar.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnListar.setBounds(601, 102, 122, 57);
 		frame.getContentPane().add(btnListar);
 	}
+	
+	
 }
 

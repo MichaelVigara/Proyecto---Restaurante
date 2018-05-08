@@ -6,6 +6,9 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.AbstractAction;
+import java.awt.event.ActionEvent;
+import javax.swing.Action;
 
 public class PanelI extends JPanel {
 
@@ -15,12 +18,14 @@ public class PanelI extends JPanel {
 	
 	ImageIcon imagen;
 	String nombre;
+	private final Action action = new SwingAction();
 	
 	public PanelI(String nombre) {
 		this.nombre = nombre;
 		setLayout(null);
 		
 		JButton btnNewButton = new JButton("Administracion");
+		btnNewButton.setAction(action);
 		btnNewButton.setBounds(39, 415, 127, 48);
 		add(btnNewButton);
 		
@@ -39,4 +44,12 @@ public class PanelI extends JPanel {
 		super.paint(g);
 	}
 
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
+	}
 }
