@@ -31,6 +31,7 @@ public class TicketsII {
 				try {
 					TicketsII window = new TicketsII();
 					window.frame.setVisible(true);
+					window.frame.setResizable(false);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
