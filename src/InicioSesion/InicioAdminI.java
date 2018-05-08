@@ -7,8 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
-import Inicio.Fondo;
 import Inicio.FondoI;
+import Inicio.PanelI;
 
 import javax.swing.JButton;
 import java.awt.Font;
@@ -16,7 +16,7 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class InicioAdm {
+public class InicioAdminI {
 
 	private JFrame frame;
 	private JTextField textusr;
@@ -29,8 +29,10 @@ public class InicioAdm {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					InicioAdm window = new InicioAdm();
+					InicioAdminI window = new InicioAdminI();
 					window.frame.setVisible(true);
+					window.frame.setResizable(false);
+
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -41,7 +43,7 @@ public class InicioAdm {
 	/**
 	 * Create the application.
 	 */
-	public InicioAdm() {
+	public InicioAdminI() {
 		initialize();
 	}
 
@@ -74,17 +76,6 @@ public class InicioAdm {
 		lblContrasea.setBounds(20, 113, 65, 14);
 		frame.getContentPane().add(lblContrasea);
 		
-		JButton btnAtras = new JButton("Atras");
-		btnAtras.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				FondoI inicio = new FondoI();
-				inicio.frame.setVisible(true);
-			}
-		});
-		btnAtras.setFont(new Font("Tahoma", Font.PLAIN, 8));
-		btnAtras.setBounds(10, 11, 56, 23);
-		frame.getContentPane().add(btnAtras);
-		
 		JButton btnValidar = new JButton("Validar");
 		btnValidar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -109,7 +100,13 @@ public class InicioAdm {
 			}
 		});
 		btnValidar.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnValidar.setBounds(70, 155, 89, 38);
+		btnValidar.setBounds(128, 162, 89, 38);
 		frame.getContentPane().add(btnValidar);
+		
+		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		btnCancelar.setBounds(20, 162, 89, 38);
+		frame.getContentPane().add(btnCancelar);
 	}
 }
+
