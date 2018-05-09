@@ -52,10 +52,6 @@ public class AñadProductoIIAdmin {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblProductos = new JLabel("Productos");
-		lblProductos.setBounds(10, 11, 60, 14);
-		frame.getContentPane().add(lblProductos);
-		
 		JLabel lblNombre = new JLabel("Nombre");
 		lblNombre.setBounds(20, 36, 46, 14);
 		frame.getContentPane().add(lblNombre);
@@ -103,7 +99,7 @@ public class AñadProductoIIAdmin {
 		
 		JLabel lblFondo = new JLabel("Fondo");
 		lblFondo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Documents\\DAW1\\Programacion\\Marte\\Proyecto BBDD - Restaurante\\src\\Inicio\\fondo3.jpg"));
-		lblFondo.setBounds(-310, -13, 677, 175);
+		lblFondo.setBounds(-502, -13, 869, 175);
 		frame.getContentPane().add(lblFondo);
 	}
 }
