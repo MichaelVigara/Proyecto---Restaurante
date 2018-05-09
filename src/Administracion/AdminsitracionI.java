@@ -14,7 +14,14 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
 
 public class AdminsitracionI {
 
@@ -110,12 +117,12 @@ public class AdminsitracionI {
 		frame.getContentPane().add(btnCategorias);
 		
 		btnListo = new JButton("Listo");
-		btnListo.setBounds(657, 420, 89, 23);
+		btnListo.setBounds(657, 399, 89, 23);
 		frame.getContentPane().add(btnListo);
 		
 		btnAtras = new JButton("Atras");
 		btnAtras.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		btnAtras.setBounds(10, 420, 64, 23);
+		btnAtras.setBounds(10, 399, 64, 23);
 		frame.getContentPane().add(btnAtras);
 		
 		btnListar = new JButton("Actualizar");
@@ -125,11 +132,72 @@ public class AdminsitracionI {
 				AdministracionProdPreCatg.setModel(Prueba.Productos());
 			}
 		});
+		
+		ConexionBBDD Prueba = new ConexionBBDD();
+		AdministracionProdPreCatg.setModel(Prueba.Productos());
+		
 		btnListar.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnListar.setBounds(601, 102, 122, 57);
 		frame.getContentPane().add(btnListar);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnAadirProductos = new JMenu("Administracion");
+		menuBar.add(mnAadirProductos);
+		
+		JMenu mnProductos = new JMenu("Productos");
+		mnAadirProductos.add(mnProductos);
+		
+		JMenuItem mntmAadirProducto = new JMenuItem("A\u00F1adir Producto");
+		mnProductos.add(mntmAadirProducto);
+		
+		JMenu mnCategorias = new JMenu("Categorias");
+		mnAadirProductos.add(mnCategorias);
+		
+		JMenuItem mntmAadirModificar = new JMenuItem("A\u00F1adir / Modificar Categorias");
+		mnCategorias.add(mntmAadirModificar);
+		
+		JMenu mnPedidos = new JMenu("Historial");
+		mnAadirProductos.add(mnPedidos);
+		
+		JMenuItem mntmHistorialDePedidos = new JMenuItem("Historial de Pedidos");
+		mnPedidos.add(mntmHistorialDePedidos);
+		
+		JMenuItem mntmHistorialDeTickets = new JMenuItem("Historial de Tickets");
+		mnPedidos.add(mntmHistorialDeTickets);
+		
+		JMenu mnVista = new JMenu("Vista");
+		menuBar.add(mnVista);
+		
+		JMenuItem mntmVistaTotal = new JMenuItem("Vista Total");
+		mnVista.add(mntmVistaTotal);
+			
+		mntmVistaTotal.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				ConexionBBDD Prueba = new ConexionBBDD();
+				AdministracionProdPreCatg.setModel(Prueba.Productos());
+			}
+
+		});
+		
+		JMenu mnListarProductos = new JMenu("Ordenar");
+		mnVista.add(mnListarProductos);
+		
+		JCheckBoxMenuItem chckbxmntmProducto = new JCheckBoxMenuItem("Producto");
+		mnListarProductos.add(chckbxmntmProducto);
+		
+		JCheckBoxMenuItem chckbxmntmCategoria = new JCheckBoxMenuItem("Categoria");
+		mnListarProductos.add(chckbxmntmCategoria);
+		
+		JCheckBoxMenuItem chckbxmntmPrecio = new JCheckBoxMenuItem("Precio");
+		mnListarProductos.add(chckbxmntmPrecio);
 	}
+
 	
-	
+	public void setVisible(boolean b) {
+		// TODO Apéndice de método generado automáticamente
+		
+	}
 }
 

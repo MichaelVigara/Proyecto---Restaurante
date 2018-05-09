@@ -16,6 +16,9 @@ import ConexionBBDD.ConexionBBDD;
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class TicketsII {
 
@@ -62,7 +65,7 @@ public class TicketsII {
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Todas las Mesas", "Mesa 01", "Mesa 02", "Mesa 03", "Mesa 04", "Mesa 05", "Mesa 06", "Mesa 07", "Mesa 08", "Mesa 09", "Mesa 10", "Mesa 11", "Mesa 12", "Mesa 13", "Mesa 14", "Mesa 15"}));
-		comboBox.setBounds(145, 12, 121, 20);
+		comboBox.setBounds(215, 12, 121, 20);
 		frame.getContentPane().add(comboBox);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -84,15 +87,15 @@ public class TicketsII {
 		btnPagado.setBounds(112, 332, 121, 50);
 		frame.getContentPane().add(btnPagado);
 		
-		JButton btnListar = new JButton("Listar");
-		btnListar.setFont(new Font("Tahoma", Font.PLAIN, 10));
-		btnListar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				ConexionBBDD Prueba = new ConexionBBDD();
-				TicketMesTiPagImpoTotal.setModel(Prueba.Ticket());
-			}
-		});
-		btnListar.setBounds(276, 11, 60, 23);
-		frame.getContentPane().add(btnListar);
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("Ticket");
+		menuBar.add(mnNewMenu);
+		
+		JMenuItem mntmListar = new JMenuItem("Actualizar");
+		mnNewMenu.add(mntmListar);
+		ConexionBBDD Prueba = new ConexionBBDD();
+		TicketMesTiPagImpoTotal.setModel(Prueba.Ticket());
 	}
 }

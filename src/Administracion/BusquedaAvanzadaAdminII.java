@@ -5,9 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+
+import ConexionBBDD.ConexionBBDD;
+
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Font;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
 
@@ -45,6 +51,25 @@ public class BusquedaAvanzadaAdminII {
 	/**
 	 * Initialize the contents of the frame.
 	 */
+	
+	public BusquedaAvanzadaAdminII(AdminsitracionI administracion) {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosed(WindowEvent e) {
+				administracion.setVisible(true);
+			}
+			@Override
+			public void windowClosing(WindowEvent e) {
+				administracion.setVisible(true);
+			}
+		});
+		
+	}
+	private void addWindowListener(WindowAdapter windowAdapter) {
+		// TODO Apéndice de método generado automáticamente
+		
+	}
+
 	private void initialize() {
 		frame = new JFrame();
 		frame.setBounds(100, 100, 435, 175);
