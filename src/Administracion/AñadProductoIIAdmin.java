@@ -9,10 +9,13 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class AñadProductoIIAdmin {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 
@@ -86,11 +89,21 @@ public class AñadProductoIIAdmin {
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnAtras = new JButton("Atras");
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
 		btnAtras.setBounds(10, 127, 70, 23);
 		frame.getContentPane().add(btnAtras);
 		
 		JButton btnListo = new JButton("Listo");
 		btnListo.setBounds(287, 127, 70, 23);
 		frame.getContentPane().add(btnListo);
+		
+		JLabel lblFondo = new JLabel("Fondo");
+		lblFondo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Documents\\DAW1\\Programacion\\Marte\\Proyecto BBDD - Restaurante\\src\\Inicio\\fondo3.jpg"));
+		lblFondo.setBounds(-310, -13, 677, 175);
+		frame.getContentPane().add(lblFondo);
 	}
 }

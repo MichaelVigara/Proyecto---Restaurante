@@ -19,6 +19,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 import javax.swing.JPasswordField;
+import javax.swing.ImageIcon;
 
 public class InicioAdminI {
 
@@ -58,21 +59,21 @@ public class InicioAdminI {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(SystemColor.info);
 		frame.setBackground(new Color(0, 153, 204));
-		frame.setBounds(100, 100, 243, 261);
+		frame.setBounds(100, 100, 243, 210);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setBounds(20, 66, 46, 14);
+		lblUsuario.setBounds(39, 37, 46, 14);
 		frame.getContentPane().add(lblUsuario);
 		
 		textusr = new JTextField();
-		textusr.setBounds(93, 63, 86, 20);
+		textusr.setBounds(95, 34, 86, 20);
 		frame.getContentPane().add(textusr);
 		textusr.setColumns(10);
 		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
-		lblContrasea.setBounds(20, 113, 65, 14);
+		lblContrasea.setBounds(20, 84, 65, 14);
 		frame.getContentPane().add(lblContrasea);
 		
 		JButton btnValidar = new JButton("Validar");
@@ -97,17 +98,22 @@ public class InicioAdminI {
 			}
 		});
 		btnValidar.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnValidar.setBounds(128, 162, 89, 38);
+		btnValidar.setBounds(128, 122, 89, 38);
 		frame.getContentPane().add(btnValidar);
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		btnCancelar.setBounds(20, 162, 89, 38);
+		btnCancelar.setBounds(10, 122, 89, 38);
 		frame.getContentPane().add(btnCancelar);
 		
 		textpass = new JPasswordField();
-		textpass.setBounds(93, 110, 86, 20);
+		textpass.setBounds(95, 81, 86, 20);
 		frame.getContentPane().add(textpass);
+		
+		JLabel lblFondo = new JLabel("Fondo");
+		lblFondo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Documents\\DAW1\\Programacion\\Marte\\Proyecto BBDD - Restaurante\\src\\Inicio\\fondo3.jpg"));
+		lblFondo.setBounds(-404, -30, 631, 267);
+		frame.getContentPane().add(lblFondo);
 	}
 }
 

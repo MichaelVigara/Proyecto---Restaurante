@@ -8,10 +8,13 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JMenuBar;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.ImageIcon;
 
 public class AñadirCategoriaAdminII {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField textField;
 
 	/**
@@ -43,20 +46,16 @@ public class AñadirCategoriaAdminII {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 288, 160);
+		frame.setBounds(100, 100, 288, 157);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JLabel lblCategoria = new JLabel("Categoria");
-		lblCategoria.setBounds(10, 11, 86, 14);
-		frame.getContentPane().add(lblCategoria);
-		
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(20, 36, 46, 14);
+		lblNombre.setBounds(10, 11, 46, 14);
 		frame.getContentPane().add(lblNombre);
 		
 		textField = new JTextField();
-		textField.setBounds(30, 59, 124, 20);
+		textField.setBounds(10, 36, 124, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
@@ -66,12 +65,22 @@ public class AñadirCategoriaAdminII {
 		frame.getContentPane().add(button);
 		
 		JButton btnAtras = new JButton("Atras");
-		btnAtras.setBounds(7, 90, 59, 23);
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnAtras.setBounds(7, 90, 67, 23);
 		frame.getContentPane().add(btnAtras);
 		
 		JButton btnListo = new JButton("Listo");
-		btnListo.setBounds(200, 90, 59, 23);
+		btnListo.setBounds(192, 90, 67, 23);
 		frame.getContentPane().add(btnListo);
+		
+		JLabel lblFondo = new JLabel("Fondo");
+		lblFondo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Documents\\DAW1\\Programacion\\Marte\\Proyecto BBDD - Restaurante\\src\\Inicio\\fondo3.jpg"));
+		lblFondo.setBounds(-571, -269, 855, 455);
+		frame.getContentPane().add(lblFondo);
 	}
 
 }

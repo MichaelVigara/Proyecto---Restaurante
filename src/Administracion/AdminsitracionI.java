@@ -10,6 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import ConexionBBDD.ConexionBBDD;
 import Inicio.Index;
 import Inicio.PanelI;
+import Restaurante.AñadirProductosII;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -26,6 +27,7 @@ import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButtonMenuItem;
+import javax.swing.ImageIcon;
 
 public class AdminsitracionI {
 
@@ -114,6 +116,14 @@ public class AdminsitracionI {
 		frame.getContentPane().add(lblAadir);
 		
 		btnProductos = new JButton("Productos");
+		btnProductos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AñadProductoIIAdmin añadirprod = new AñadProductoIIAdmin();
+				añadirprod.frame.setVisible(true);
+				
+				
+			}
+		});
 		btnProductos.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnProductos.setBounds(601, 212, 122, 50);
 		frame.getContentPane().add(btnProductos);
@@ -123,6 +133,13 @@ public class AdminsitracionI {
 		frame.getContentPane().add(lblAadirmodificar);
 		
 		btnCategorias = new JButton("Categorias");
+		btnCategorias.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				AñadirCategoriaAdminII añadircat = new AñadirCategoriaAdminII();
+				añadircat.frame.setVisible(true);
+				
+			}
+		});
 		btnCategorias.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnCategorias.setBounds(601, 325, 122, 50);
 		frame.getContentPane().add(btnCategorias);
@@ -157,6 +174,11 @@ public class AdminsitracionI {
 		btnListar.setBounds(601, 102, 122, 57);
 		frame.getContentPane().add(btnListar);
 		
+		JLabel lblFondo = new JLabel("Fondo");
+		lblFondo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Documents\\DAW1\\Programacion\\Marte\\Proyecto BBDD - Restaurante\\src\\Inicio\\fondo3.jpg"));
+		lblFondo.setBounds(0, -26, 764, 459);
+		frame.getContentPane().add(lblFondo);
+		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 		
@@ -169,11 +191,27 @@ public class AdminsitracionI {
 		JMenuItem mntmAadirProducto = new JMenuItem("A\u00F1adir Producto");
 		mnProductos.add(mntmAadirProducto);
 		
+		mntmAadirProducto.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AñadirCategoriaAdminII añadircate = new AñadirCategoriaAdminII();
+				añadircate.frame.setVisible(true);
+			}
+
+		});
+		
 		JMenu mnCategorias = new JMenu("Categorias");
 		mnAadirProductos.add(mnCategorias);
 		
 		JMenuItem mntmAadirModificar = new JMenuItem("A\u00F1adir / Modificar Categorias");
 		mnCategorias.add(mntmAadirModificar);
+		
+		mntmAadirModificar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AñadProductoIIAdmin añadirprod = new AñadProductoIIAdmin();
+				añadirprod.frame.setVisible(true);
+			}
+
+		});
 		
 		JMenu mnPedidos = new JMenu("Historial");
 		mnAadirProductos.add(mnPedidos);
