@@ -8,11 +8,14 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import ConexionBBDD.ConexionBBDD;
+import Inicio.Index;
+import Inicio.PanelI;
 
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.Window;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -21,11 +24,12 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButtonMenuItem;
 
 public class AdminsitracionI {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JTable AdministracionProdPreCatg;
 	private JLabel lblBuscar;
 	private JTextField textField;
@@ -94,7 +98,14 @@ public class AdminsitracionI {
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
-		btnBusqudaAvanzada = new JButton("Busquda Avanzada");
+		btnBusqudaAvanzada = new JButton("Busqueda Avanzada");
+		btnBusqudaAvanzada.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BusquedaAvanzadaAdminII busqueda = new BusquedaAvanzadaAdminII();
+				busqueda.frame.setVisible(true);
+				
+			}
+		});
 		btnBusqudaAvanzada.setBounds(591, 46, 155, 23);
 		frame.getContentPane().add(btnBusqudaAvanzada);
 		
@@ -121,6 +132,13 @@ public class AdminsitracionI {
 		frame.getContentPane().add(btnListo);
 		
 		btnAtras = new JButton("Atras");
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Index index = new Index();
+				index.frame.setVisible(true);
+				frame.setVisible(false);
+			}
+		});
 		btnAtras.setFont(new Font("Tahoma", Font.PLAIN, 11));
 		btnAtras.setBounds(10, 399, 64, 23);
 		frame.getContentPane().add(btnAtras);

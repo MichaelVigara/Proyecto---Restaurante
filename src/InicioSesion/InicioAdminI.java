@@ -7,7 +7,9 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import Administracion.AdminsitracionI;
 import Inicio.FondoI;
+import Inicio.Index;
 import Inicio.PanelI;
 
 import javax.swing.JButton;
@@ -15,12 +17,14 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
+import javax.swing.JPasswordField;
 
 public class InicioAdminI {
 
-	private JFrame frame;
+	public JFrame frame;
 	private JTextField textusr;
-	private JTextField textpass;
+	private JPasswordField textpass;
 
 	/**
 	 * Launch the application.
@@ -52,7 +56,7 @@ public class InicioAdminI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(153, 204, 255));
+		frame.getContentPane().setBackground(SystemColor.info);
 		frame.setBackground(new Color(0, 153, 204));
 		frame.setBounds(100, 100, 243, 261);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -67,11 +71,6 @@ public class InicioAdminI {
 		frame.getContentPane().add(textusr);
 		textusr.setColumns(10);
 		
-		textpass = new JTextField();
-		textpass.setColumns(10);
-		textpass.setBounds(93, 110, 86, 20);
-		frame.getContentPane().add(textpass);
-		
 		JLabel lblContrasea = new JLabel("Contrase\u00F1a");
 		lblContrasea.setBounds(20, 113, 65, 14);
 		frame.getContentPane().add(lblContrasea);
@@ -83,19 +82,17 @@ public class InicioAdminI {
 				String sPassw = textpass.getText();
 				if(sUser != "" && sPassw != "") {
 					if(sPassw.equals("1234")) {
-						Ejemplo1Ventana2 administracion = new Ejemplo1Ventana2();
+						AdminsitracionI administracion = new AdminsitracionI();
+						JOptionPane.showMessageDialog(null, "Datos Correctos: Bienvenido");
 						administracion.frame.setVisible(true);
+						frame.setVisible(false);
+						Index portal = new Index();
+						portal.frame.setVisible(false);
 
 					}else {
-						JOptionPane.showMessageDialog(null, "Error en contraseña");
+						JOptionPane.showMessageDialog(null, "Error en el usuario o contraseña");
 					}
-					
-				}else {
-					JOptionPane.showMessageDialog(null, "Error en usuario");
-				
-				
-					
-				
+									
 			}
 			}
 		});
@@ -107,6 +104,10 @@ public class InicioAdminI {
 		btnCancelar.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		btnCancelar.setBounds(20, 162, 89, 38);
 		frame.getContentPane().add(btnCancelar);
+		
+		textpass = new JPasswordField();
+		textpass.setBounds(93, 110, 86, 20);
+		frame.getContentPane().add(textpass);
 	}
 }
 

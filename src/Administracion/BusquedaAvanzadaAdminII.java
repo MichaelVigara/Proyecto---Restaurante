@@ -16,10 +16,12 @@ import java.awt.event.WindowEvent;
 
 import javax.swing.JCheckBox;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class BusquedaAvanzadaAdminII {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -72,7 +74,7 @@ public class BusquedaAvanzadaAdminII {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 435, 175);
+		frame.setBounds(100, 100, 439, 181);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -122,18 +124,23 @@ public class BusquedaAvanzadaAdminII {
 		frame.getContentPane().add(lblOrdenar);
 		
 		JCheckBox chckbxNewCheckBox = new JCheckBox("Productos");
-		chckbxNewCheckBox.setBounds(71, 111, 81, 23);
+		chckbxNewCheckBox.setBounds(71, 111, 91, 23);
 		frame.getContentPane().add(chckbxNewCheckBox);
 		
 		JCheckBox chckbxPrecio = new JCheckBox("Precio");
-		chckbxPrecio.setBounds(154, 111, 66, 23);
+		chckbxPrecio.setBounds(165, 111, 66, 23);
 		frame.getContentPane().add(chckbxPrecio);
 		
 		JCheckBox chckbxCategoria = new JCheckBox("Categoria");
-		chckbxCategoria.setBounds(222, 111, 81, 23);
+		chckbxCategoria.setBounds(228, 111, 81, 23);
 		frame.getContentPane().add(chckbxCategoria);
 		
 		JButton btnAtras = new JButton("Atras");
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
 		btnAtras.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		btnAtras.setBounds(353, 111, 66, 23);
 		frame.getContentPane().add(btnAtras);
