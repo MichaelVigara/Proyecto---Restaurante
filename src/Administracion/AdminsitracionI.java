@@ -134,8 +134,7 @@ public class AdminsitracionI {
 		btnAtras = new JButton("Atras");
 		btnAtras.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Index index = new Index();
-				index.frame.setVisible(true);
+				
 				frame.setVisible(false);
 			}
 		});
