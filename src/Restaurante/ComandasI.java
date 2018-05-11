@@ -8,6 +8,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import Administracion.AñadProductoIIAdmin;
 import ConexionBBDD.ConexionBBDD;
 
 import javax.swing.JComboBox;
@@ -18,10 +19,12 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
 
 public class ComandasI {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTable ComandasMesaComProdCant;
 
 	/**
@@ -58,11 +61,16 @@ public class ComandasI {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnAtras = new JButton("Atras");
-		btnAtras.setBounds(8, 30, 67, 23);
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnAtras.setBounds(8, 11, 67, 23);
 		frame.getContentPane().add(btnAtras);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(8, 64, 599, 215);
+		scrollPane.setBounds(8, 45, 599, 215);
 		frame.getContentPane().add(scrollPane);
 		
 		ComandasMesaComProdCant = new JTable();
@@ -75,21 +83,30 @@ public class ComandasI {
 		));
 		scrollPane.setViewportView(ComandasMesaComProdCant);
 		
+		ConexionBBDD Prueba = new ConexionBBDD();
+		ComandasMesaComProdCant.setModel(Prueba.Comandas());
+		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Todas las Mesas", "Mesa 01", "Mesa 02", "Mesa 03", "Mesa 04", "Mesa 05", "Mesa 06", "Mesa 07", "Mesa 08", "Mesa 09", "Mesa 10", "Mesa 11", "Mesa 12", "Mesa 13", "Mesa 14", "Mesa 15"}));
-		comboBox.setBounds(21, 290, 163, 40);
+		comboBox.setBounds(18, 271, 163, 40);
 		frame.getContentPane().add(comboBox);
 		
-		JButton btnListar = new JButton("Listar");
-		btnListar.addActionListener(new ActionListener() {
+		JButton btnNewButton = new JButton("A\u00F1adir");
+		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ConexionBBDD Prueba = new ConexionBBDD();
-				ComandasMesaComProdCant.setModel(Prueba.Comandas());
+				AñadirProductosII añadirprod = new AñadirProductosII();
+				añadirprod.frame.setVisible(true);
 			}
 		});
-		btnListar.setBounds(515, 290, 89, 23);
-		frame.getContentPane().add(btnListar);
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnNewButton.setBounds(453, 271, 150, 43);
+		frame.getContentPane().add(btnNewButton);
+		
+		JLabel lblFondo = new JLabel("Fondo");
+		lblFondo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Documents\\DAW1\\Programacion\\Marte\\Proyecto BBDD - Restaurante\\src\\Inicio\\fondo8.jpg"));
+		lblFondo.setBounds(0, 0, 675, 325);
+		frame.getContentPane().add(lblFondo);
 		
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
@@ -99,6 +116,14 @@ public class ComandasI {
 		
 		JMenuItem mntmPedido = new JMenuItem("Pedido");
 		mnNewMenu.add(mntmPedido);
-	}
+		
+		mntmPedido.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				AñadirProductosII añadirprod = new AñadirProductosII();
+				añadirprod.frame.setVisible(true);
+			}
 
+		});
+		
+	}
 }

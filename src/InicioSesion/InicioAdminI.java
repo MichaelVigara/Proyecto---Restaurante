@@ -7,6 +7,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import java.awt.event.KeyEvent;
+import javax.swing.InputMap;
+import javax.swing.KeyStroke;
+
 import Administracion.AdminsitracionI;
 import Inicio.FondoI;
 import Inicio.Index;
@@ -114,6 +118,13 @@ public class InicioAdminI {
 		lblFondo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Documents\\DAW1\\Programacion\\Marte\\Proyecto BBDD - Restaurante\\src\\Inicio\\fondo3.jpg"));
 		lblFondo.setBounds(-404, -30, 631, 267);
 		frame.getContentPane().add(lblFondo);
+		
+		InputMap map = new InputMap();
+
+		map.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0, false), "pressed");
+		map.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0, true), "released");
+
+		btnValidar.setInputMap(0, map);
 	}
 }
 

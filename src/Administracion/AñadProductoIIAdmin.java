@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
 
 public class AñadProductoIIAdmin {
 
-	JFrame frame;
+	public JFrame frame;
 	private JTextField textField;
 	private JTextField textField_1;
 
@@ -75,7 +75,7 @@ public class AñadProductoIIAdmin {
 		frame.getContentPane().add(lblCategoria);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Todas las Categorias", "Refrescos", "Bebidas Alcoholicas", "Casqueria", "Carnes", "Pescados", "Sopas", "Entrantes", "Pizzas", "Ensaladas", "Arroces", "Bocadillos", "Postres", "Menu Infantil", "Hamburguesas", "Pasta"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Todas las Categorias", "Refrescos", "Bebidas Alcoholicas", "Casqueria", "Carnes", "Pescados", "Sopas", "Entrantes", "Pizzas", "Ensaladas", "Arroces", "Bocadillos", "Postres", "Menu Infantil", "Hamburguesas", "Pasta", "Vinos"}));
 		comboBox.setBounds(76, 95, 144, 20);
 		frame.getContentPane().add(comboBox);
 		

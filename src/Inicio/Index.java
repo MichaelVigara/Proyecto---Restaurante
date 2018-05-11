@@ -6,6 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import InicioSesion.InicioAdminI;
+import Restaurante.InicioRestauranteI;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -61,7 +62,13 @@ public class Index {
 		frame.getContentPane().add(button);
 		
 		JButton button_1 = new JButton("Restaurante");
-		button_1.setBounds(532, 417, 127, 48);
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InicioRestauranteI iniciorest = new InicioRestauranteI();
+				iniciorest.frame.setVisible(true);
+			}
+		});
+		button_1.setBounds(556, 417, 127, 48);
 		frame.getContentPane().add(button_1);
 		
 		JLabel lblNewLabel = new JLabel("New label");

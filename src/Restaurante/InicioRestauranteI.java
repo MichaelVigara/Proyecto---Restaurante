@@ -5,10 +5,14 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.Font;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class InicioRestauranteI {
 
-	private JFrame frame;
+	public JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -43,23 +47,51 @@ public class InicioRestauranteI {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnNewButton = new JButton("Calcular Importe");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				TicketsII ticket = new TicketsII();
+				ticket.frame.setVisible(true);
+			}
+		});
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnNewButton.setBounds(10, 71, 138, 62);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnAtras = new JButton("Atras");
-		btnAtras.setBounds(10, 11, 59, 23);
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
+		btnAtras.setBounds(10, 11, 72, 23);
 		frame.getContentPane().add(btnAtras);
 		
 		JButton btnComandas = new JButton("Comandas");
+		btnComandas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ComandasI comandas = new ComandasI();
+				comandas.frame.setVisible(true);
+			}
+		});
 		btnComandas.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnComandas.setBounds(158, 71, 138, 62);
 		frame.getContentPane().add(btnComandas);
 		
 		JButton btnTicket = new JButton("Ticket");
+		btnTicket.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TicketsII ticket = new TicketsII();
+				ticket.frame.setVisible(true);
+			}
+		});
 		btnTicket.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnTicket.setBounds(306, 71, 138, 62);
 		frame.getContentPane().add(btnTicket);
+		
+		JLabel lblFondo = new JLabel("Fondo");
+		lblFondo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Documents\\DAW1\\Programacion\\Marte\\Proyecto BBDD - Restaurante\\src\\Inicio\\fondo8.jpg"));
+		lblFondo.setBounds(0, 0, 464, 158);
+		frame.getContentPane().add(lblFondo);
 	}
 
 }

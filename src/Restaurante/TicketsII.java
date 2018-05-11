@@ -19,10 +19,11 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import javax.swing.ImageIcon;
 
 public class TicketsII {
 
-	private JFrame frame;
+	JFrame frame;
 	private JTable TicketMesTiPagImpoTotal;
 
 	/**
@@ -59,6 +60,11 @@ public class TicketsII {
 		frame.getContentPane().setLayout(null);
 		
 		JButton btnAtras = new JButton("Atras");
+		btnAtras.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+			}
+		});
 		btnAtras.setFont(new Font("Tahoma", Font.PLAIN, 9));
 		btnAtras.setBounds(10, 11, 59, 23);
 		frame.getContentPane().add(btnAtras);
@@ -97,5 +103,10 @@ public class TicketsII {
 		mnNewMenu.add(mntmListar);
 		ConexionBBDD Prueba = new ConexionBBDD();
 		TicketMesTiPagImpoTotal.setModel(Prueba.Ticket());
+		
+		JLabel lblFondo = new JLabel("Fondo");
+		lblFondo.setIcon(new ImageIcon("C:\\Users\\DAW1\\Documents\\DAW1\\Programacion\\Marte\\Proyecto BBDD - Restaurante\\src\\Inicio\\fondo8.jpg"));
+		lblFondo.setBounds(-26, -18, 465, 407);
+		frame.getContentPane().add(lblFondo);
 	}
 }
