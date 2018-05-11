@@ -119,12 +119,7 @@ public class InicioAdminI {
 		lblFondo.setBounds(-404, -30, 631, 267);
 		frame.getContentPane().add(lblFondo);
 		
-		InputMap map = new InputMap();
-
-		map.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0, false), "pressed");
-		map.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0, true), "released");
-
-		btnValidar.setInputMap(0, map);
+		
 	}
 }
 
